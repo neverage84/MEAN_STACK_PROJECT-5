@@ -399,8 +399,8 @@ class NetworkComponent {
             .subscribe(response => {
             //  this.network = response.json();
             //  this.xml = response.json().Status.Network[0].Ethernet[0];
-            console.log(Object.values(response.json().Status.Network[0].Ethernet[0]).toString().split(","));
-            this.network = Object.values(response.json().Status.Network[0].Ethernet[0]).toString().split(",");
+            console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
+            this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         });
         //  console.log(this.network);
     }
