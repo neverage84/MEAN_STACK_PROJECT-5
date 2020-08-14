@@ -1,1 +1,24 @@
 <p>network works!</p>
+
+<!-- Ethernet Table -->
+
+<table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>MacAddress</th>
+              <th>Speed</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Ethernet</td>
+            <td *ngFor="let item of network">
+                {{item}}
+            </td>
+           
+          </tr>
+          
+        </tbody>
+      </table>

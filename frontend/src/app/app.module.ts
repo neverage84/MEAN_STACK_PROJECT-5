@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
+
 import { AppComponent } from './app.component';
 
 
@@ -18,8 +20,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DisplayComponent } from './display/display.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
+import { XmlService } from './xml.service';
 
-import {IssueService} from './issue.service';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
@@ -43,12 +45,13 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     // AppRoutingModule,
     // Add line below:
     BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [IssueService],
+  providers: [XmlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

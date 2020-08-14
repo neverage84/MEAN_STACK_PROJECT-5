@@ -31,7 +31,7 @@ function StatusXMLRequest(){
     fs.readFile(__dirname + '/status.xml', function(err, data) {
     //parse the data, store as xml variable, then log that file has been read
         parser.parseString(data, function (err, result) {
-            xml = result.Status.Network[0].Ethernet;
+            xml = result;
             console.log(xml);
             console.log('Status.xml Request Sent');
     });
@@ -46,4 +46,4 @@ router.route('/xml').get((req, res) => {
 StatusXMLRequest();
 
 //run the Request Function every 60 seconds
-setInterval(StatusXMLRequest, 60*1000);
+// setInterval(StatusXMLRequest, 60*1000);
