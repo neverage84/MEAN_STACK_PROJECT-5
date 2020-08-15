@@ -1,3 +1,9 @@
+<!-- Collapsible menu -->
+<ul class="collapsible">
+        <li>
+          <div class="collapsible-header"><i class="material-icons">filter_drama</i>Network</div>
+            <div class="collapsible-body">
+              
 
 <!-- Card Containing Ethernet -->
 <div class="row">
@@ -5,34 +11,42 @@
           <div class="card ">
             <div class="card-content ">
               <span class="card-title center">Ethernet</span>
-             
-
 <!-- Ethernet Table -->
 
-<table>
-        <thead>
-          <tr>
-              <th>MacAddress</th>
-              <th>Speed</th>
-          </tr>
-        </thead>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MacAddress</th>
+                                <th>Speed</th>
+                            </tr>
+                        </thead>
 
-        <tbody>
-          <tr>
-            <td *ngFor="let item of networkInfo.ethernet">
-                {{item}}
-            </td>
-          </tr> 
-        </tbody>
-      </table>
-
-
+                        <tbody>
+                            <tr>
+                                <td *ngFor="let item of networkInfo.ethernet">
+                                {{item}}
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
 
 
+<!-- End of Ethernet card divs -->
             </div>
-           
           </div>
         </div>
       </div>
+
+
+
+<!-- End of collapsible menu -->
+            </div>
+        </li>
+
+
+
+
+
+
 
 
