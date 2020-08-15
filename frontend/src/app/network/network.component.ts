@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { XmlService } from '../xml.service';
-import { Http } from '@angular/http';
+import { XmlService, Network_S } from '../xml.service';
+
 
 
 @Component({
@@ -9,19 +9,21 @@ import { Http } from '@angular/http';
   styleUrls: ['./network.component.css']
 })
 export class NetworkComponent implements OnInit {
-network: any[];
 
-  // constructor( private service: XmlService) { }
-constructor (http: Http){
-   http.get('http://localhost:3000/xml')
-   .subscribe(response => {
-    
-    //  this.network = response.json();
-    //  this.xml = response.json().Status.Network[0].Ethernet[0];
-  console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
-  this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
+  info : Network_S;
+  
+
+  constructor( private service: XmlService) { 
+// constructor (http: Http){
+  // this.service.getXml()
+  //  .subscribe(response => {
+   
+   this.info = service.info;
+   
+  // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
+  // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
  
-   })
+  //  })
   //  console.log(this.network);
 }
 
