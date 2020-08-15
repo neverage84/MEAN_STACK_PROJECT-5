@@ -2,17 +2,25 @@ import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import {interval} from 'rxjs';
 
+//Network variables binding 
 export interface Network_S{
   ethernet : string[];
   iPv4: string[];
   iPv6: string[];
 }
 
+//Peripherals variables binding
 export interface Peripherals_S{
   connectedDevice : any[];
   connectedDeviceHeader : any[];
   connectedCameraHeader: any[];
   connectedCamera: any[];
+}
+
+//Capabilities Binding
+export interface Capabililites_S{
+  conference : any[];
+  conferenceHeader : any[];
 }
 
 @Injectable({
@@ -25,7 +33,7 @@ export class XmlService {
 
   public networkInfo: Network_S = {ethernet : [], iPv4: [], iPv6:[] };
   public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: []};
- 
+  public capabilitiesInfo: Capabililites_S = {conference:[], conferenceHeader: []};
 
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
   replace$(headerArr){

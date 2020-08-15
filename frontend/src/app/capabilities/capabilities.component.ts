@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { XmlService, Capabililites_S } from '../xml.service';
 
 @Component({
   selector: 'capabilities',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CapabilitiesComponent implements OnInit {
 
-  constructor() { }
+  capabilitiesInfo : Capabililites_S;
+  constructor(service: XmlService) { 
+
+    this.capabilitiesInfo = service.capabilitiesInfo;
+    console.log(this.capabilitiesInfo);
+  }
 
   ngOnInit(): void {
   }

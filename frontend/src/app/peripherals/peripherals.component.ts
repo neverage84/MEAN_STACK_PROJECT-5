@@ -9,10 +9,11 @@ import { XmlService, Peripherals_S } from '../xml.service';
 export class PeripheralsComponent implements OnInit {
 
   peripheralsInfo : Peripherals_S;
+
   constructor(service: XmlService) { 
 
     this.peripheralsInfo = service.peripheralsInfo;
-    console.log(this.peripheralsInfo);
+   
   }
 
   ngOnInit(): void {
@@ -20,6 +21,4 @@ export class PeripheralsComponent implements OnInit {
 
 }
 
-function tableHeaders(item){
-  console.log(item);
-}
+
