@@ -53,9 +53,9 @@ export class XmlService {
       idealArr[1] = Object.values((idealArr[1])[0])[0];
       return idealArr;
     })
- 
+ //only cameras with value of "True" are returned
     return formattedArr.filter((arr) => {
-      return arr.length > 8;
+      return arr[2] == "True";
     });
    }
   
