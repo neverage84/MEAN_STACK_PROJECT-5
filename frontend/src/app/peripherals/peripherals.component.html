@@ -56,12 +56,12 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>iPv4</td>
-                                <!-- <td *ngFor="let item of networkInfo.iPv4">
-                                {{item}}
-                                </td> -->
-                            </tr> 
+                                <tr *ngFor="let row of peripheralsInfo.connectedCamera"
+                                >
+                                <td *ngFor="let data of row"
+                                >
+                                    {{data}}
+                                </td>
                         </tbody>
                     </table>
 

@@ -544,27 +544,36 @@ function PeripheralsComponent_th_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const header_r2 = ctx.$implicit;
+    const header_r3 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", header_r2, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", header_r3, " ");
 } }
 function PeripheralsComponent_tr_18_td_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const data_r5 = ctx.$implicit;
+    const data_r6 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r5, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r6, " ");
 } }
 function PeripheralsComponent_tr_18_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, PeripheralsComponent_tr_18_td_1_Template, 2, 1, "td", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const row_r3 = ctx.$implicit;
+    const row_r4 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", row_r3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", row_r4);
+} }
+function PeripheralsComponent_th_27_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const header_r7 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", header_r7, " ");
 } }
 class PeripheralsComponent {
     constructor(service) {
@@ -575,7 +584,7 @@ class PeripheralsComponent {
     }
 }
 PeripheralsComponent.ɵfac = function PeripheralsComponent_Factory(t) { return new (t || PeripheralsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"])); };
-PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PeripheralsComponent, selectors: [["peripherals"]], decls: 40, vars: 2, consts: [[1, "collapsible"], [1, "collapsible-header"], [1, "material-icons"], [1, "collapsible-body"], [1, "row"], [1, "col", "s12"], [1, "card"], [1, "card-content"], [1, "card-title", "center"], [4, "ngFor", "ngForOf"]], template: function PeripheralsComponent_Template(rf, ctx) { if (rf & 1) {
+PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PeripheralsComponent, selectors: [["peripherals"]], decls: 32, vars: 3, consts: [[1, "collapsible"], [1, "collapsible-header"], [1, "material-icons"], [1, "collapsible-body"], [1, "row"], [1, "col", "s12"], [1, "card"], [1, "card-content"], [1, "card-title", "center"], [4, "ngFor", "ngForOf"]], template: function PeripheralsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
@@ -611,29 +620,16 @@ PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "span", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "iPv4/iPv6");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Connected Cameras");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "table");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "thead");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "tr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, "Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, PeripheralsComponent_th_27_Template, 2, 1, "th", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Address");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "Gateway");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "th");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, "SubnetMask");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "tr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "td");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "iPv4");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "tbody");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "tr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "td");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "iPv4");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -650,6 +646,8 @@ PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.peripheralsInfo.connectedDeviceHeader);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.peripheralsInfo.connectedDevice);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.peripheralsInfo.connectedCameraHeader);
     } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BlcmlwaGVyYWxzL3BlcmlwaGVyYWxzLmNvbXBvbmVudC5jc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PeripheralsComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -762,7 +760,7 @@ class XmlService {
         this.http = http;
         this.url = 'http://localhost:3000/xml';
         this.networkInfo = { ethernet: [], iPv4: [], iPv6: [] };
-        this.peripheralsInfo = { connectedDevice: [], connectedDeviceHeader: [] };
+        this.peripheralsInfo = { connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [] };
         // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
         // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         this.getXml();
@@ -798,11 +796,8 @@ class XmlService {
             this.networkInfo.iPv6 = Object.values(response.json().Status.Network[0].IPv6[0]);
             //Peripheral Items: ConnectedDevice & Cameras
             this.peripheralsInfo.connectedDevice = this.getValuesFromObjArray(Object.values(response.json().Status.Peripherals[0].ConnectedDevice));
-            // let test = Object.values(this.peripheralsInfo.connectedDevice[0]);
-            // test[0] = Object.values(test[0])[0];
-            // console.log(test);
-            // console.log(this.getValuesFromObjArray(this.peripheralsInfo.connectedDevice));
             this.peripheralsInfo.connectedDeviceHeader = this.replace$(Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]));
+            this.peripheralsInfo.connectedCameraHeader = this.replace$(Object.keys(response.json().Status.Cameras[0].Camera[0]));
         });
     }
 }

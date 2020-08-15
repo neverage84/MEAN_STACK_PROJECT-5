@@ -12,6 +12,7 @@ export interface Peripherals_S{
   connectedDevice : any[];
   connectedDeviceHeader : any[];
   connectedCameraHeader: any[];
+  connectedCamera: any[];
 }
 
 @Injectable({
@@ -23,7 +24,7 @@ export class XmlService {
   private url = 'http://localhost:3000/xml';
 
   public networkInfo: Network_S = {ethernet : [], iPv4: [], iPv6:[] };
-  public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: []};
+  public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: []};
  
 
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
@@ -34,15 +35,28 @@ export class XmlService {
 //function to get values from each object in array with item value being the first one
   getValuesFromObjArray(ObjArr){
 
-    let newTest = ObjArr.map((v) => {
-      let test = Object.values(v);
-      test[0] = Object.values(test[0])[0];
-      return test;
+    let formattedArr = ObjArr.map((v) => {
+      let idealArr = Object.values(v);
+      idealArr[0] = Object.values(idealArr[0])[0];
+      return idealArr;
     })
-    // let test = Object.values(ObjArr[0]);
-    // test[0] = Object.values(test[0])[0];
-    // return test;
-    return newTest;
+ 
+    return formattedArr
+   }
+
+   //repeat of above function but for Camera obj Arr as it's different
+   getValuesFromObjArrayCamera(ObjArr){
+
+    let formattedArr = ObjArr.map((v) => {
+      let idealArr = Object.values(v);
+      idealArr[0] = Object.values(idealArr[0])[0];
+      idealArr[1] = Object.values((idealArr[1])[0])[0];
+      return idealArr;
+    })
+ 
+    return formattedArr.filter((arr) => {
+      return arr.length > 8;
+    });
    }
   
 
@@ -52,7 +66,7 @@ export class XmlService {
     .subscribe(response => {
 
 
-     //Network items: Ethenet, IPv4, and IPv6 
+     //Network items: Ethernet, IPv4, and IPv6 
     this.networkInfo.ethernet = Object.values(response.json().Status.Network[0].Ethernet[0]);
     this.networkInfo.iPv4 = Object.values(response.json().Status.Network[0].IPv4[0]);
     this.networkInfo.iPv6 = Object.values(response.json().Status.Network[0].IPv6[0]);
@@ -61,6 +75,8 @@ export class XmlService {
     this.peripheralsInfo.connectedDevice = this.getValuesFromObjArray(Object.values(response.json().Status.Peripherals[0].ConnectedDevice));
     this.peripheralsInfo.connectedDeviceHeader = this.replace$(Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]));
     this.peripheralsInfo.connectedCameraHeader = this.replace$(Object.keys(response.json().Status.Cameras[0].Camera[0]));
+    this.peripheralsInfo.connectedCamera = this.getValuesFromObjArrayCamera(Object.values(response.json().Status.Cameras[0].Camera));
+
     });
     
   }
