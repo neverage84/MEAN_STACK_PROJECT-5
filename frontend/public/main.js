@@ -750,6 +750,11 @@ class XmlService {
             this.getXml();
         });
     }
+    //function to take response, replace $ with "Item" as that seems to be the relevant info.
+    replace$(headerArr) {
+        headerArr[0] = "Item";
+        return headerArr;
+    }
     getXml() {
         this.http.get(this.url)
             .subscribe(response => {
@@ -759,7 +764,7 @@ class XmlService {
             this.networkInfo.iPv6 = Object.values(response.json().Status.Network[0].IPv6[0]);
             //Peripheral Items: ConnectedDevice & Cameras
             this.peripheralsInfo.connectedDevice = Object.values(response.json().Status.Peripherals[0].ConnectedDevice);
-            this.peripheralsInfo.connectedDeviceHeader = Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]);
+            this.peripheralsInfo.connectedDeviceHeader = this.replace$(Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]));
         });
     }
 }
