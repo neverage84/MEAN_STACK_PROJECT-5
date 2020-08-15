@@ -399,7 +399,7 @@ class NetworkComponent {
         // this.service.getXml()
         //  .subscribe(response => {
         this.service = service;
-        this.network = this.service.test;
+        this.info = service.info;
         // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
         // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         //  })
@@ -445,7 +445,7 @@ NetworkComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.network);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.info.ethernet);
     } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25ldHdvcmsvbmV0d29yay5jb21wb25lbnQuY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NetworkComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -586,16 +586,24 @@ __webpack_require__.r(__webpack_exports__);
 
 class XmlService {
     constructor(http) {
+        // this.service.getXml()
+        //  .subscribe(response => {
         this.http = http;
         this.url = 'http://localhost:3000/xml';
-        this.test = ["x", "z"];
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["interval"])(10000).subscribe(x => {
+        this.info = { ethernet: ["", ""] };
+        // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
+        // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
+        this.getXml();
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["interval"])(60000).subscribe(x => {
             this.getXml();
         });
     }
     getXml() {
-        // return this.http.get(this.url);
-        this.test = ["x", "x"];
+        this.http.get(this.url)
+            .subscribe(response => {
+            //Network items: Ethenet, IPv4, and IPv6 
+            this.info.ethernet = Object.values(response.json().Status.Network[0].Ethernet[0]);
+        });
     }
 }
 XmlService.ɵfac = function XmlService_Factory(t) { return new (t || XmlService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"])); };

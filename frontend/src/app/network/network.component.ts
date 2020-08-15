@@ -10,15 +10,17 @@ import { XmlService, Network_S } from '../xml.service';
 })
 export class NetworkComponent implements OnInit {
 
-  info : Network_S;
+  networkInfo : Network_S;
   
 
   constructor( private service: XmlService) { 
+
+    this.networkInfo = service.networkInfo;
 // constructor (http: Http){
   // this.service.getXml()
   //  .subscribe(response => {
    
-   this.info = service.info;
+   
    
   // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
   // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);

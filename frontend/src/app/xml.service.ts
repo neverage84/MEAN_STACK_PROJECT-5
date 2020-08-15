@@ -13,7 +13,7 @@ export class XmlService {
 
   private url = 'http://localhost:3000/xml';
 
-  public info: Network_S = {ethernet : ["", ""]};
+  public networkInfo: Network_S = {ethernet : ["", ""]};
  
   getXml() {
     this.http.get(this.url)
@@ -21,7 +21,7 @@ export class XmlService {
 
 
      //Network items: Ethenet, IPv4, and IPv6 
-    this.info.ethernet = Object.values(response.json().Status.Network[0].Ethernet[0]);
+    this.networkInfo.ethernet = Object.values(response.json().Status.Network[0].Ethernet[0]);
 
 
     })
