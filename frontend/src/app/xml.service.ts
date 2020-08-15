@@ -8,6 +8,11 @@ export interface Network_S{
   iPv6: string[];
 }
 
+export interface Peripherals_S{
+  connectedDevice : any[];
+  connectedDeviceHeader : any[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +21,7 @@ export class XmlService {
   private url = 'http://localhost:3000/xml';
 
   public networkInfo: Network_S = {ethernet : [], iPv4: [], iPv6:[] };
+  public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: []};
  
   getXml() {
     this.http.get(this.url)
@@ -26,8 +32,10 @@ export class XmlService {
     this.networkInfo.ethernet = Object.values(response.json().Status.Network[0].Ethernet[0]);
     this.networkInfo.iPv4 = Object.values(response.json().Status.Network[0].IPv4[0]);
     this.networkInfo.iPv6 = Object.values(response.json().Status.Network[0].IPv6[0]);
-
-
+    
+    //Peripheral Items: ConnectedDevice & Cameras
+    this.peripheralsInfo.connectedDevice = Object.values(response.json().Status.Peripherals[0].ConnectedDevice);
+    this.peripheralsInfo.connectedDeviceHeader = Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0])
     })
     ;
   }
