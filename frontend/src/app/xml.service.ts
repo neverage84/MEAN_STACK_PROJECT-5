@@ -11,6 +11,7 @@ export interface Network_S{
 export interface Peripherals_S{
   connectedDevice : any[];
   connectedDeviceHeader : any[];
+  connectedCameraHeader: any[];
 }
 
 @Injectable({
@@ -22,7 +23,7 @@ export class XmlService {
   private url = 'http://localhost:3000/xml';
 
   public networkInfo: Network_S = {ethernet : [], iPv4: [], iPv6:[] };
-  public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: []};
+  public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: []};
  
 
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
@@ -58,14 +59,8 @@ export class XmlService {
     
     //Peripheral Items: ConnectedDevice & Cameras
     this.peripheralsInfo.connectedDevice = this.getValuesFromObjArray(Object.values(response.json().Status.Peripherals[0].ConnectedDevice));
-    // let test = Object.values(this.peripheralsInfo.connectedDevice[0]);
-    // test[0] = Object.values(test[0])[0];
-    // console.log(test);
-    
-    // console.log(this.getValuesFromObjArray(this.peripheralsInfo.connectedDevice));
-    
-    
-    this.peripheralsInfo.connectedDeviceHeader = this.replace$(Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]))
+    this.peripheralsInfo.connectedDeviceHeader = this.replace$(Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]));
+    this.peripheralsInfo.connectedCameraHeader = this.replace$(Object.keys(response.json().Status.Cameras[0].Camera[0]));
     });
     
   }

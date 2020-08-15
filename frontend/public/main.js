@@ -544,9 +544,27 @@ function PeripheralsComponent_th_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const header_r1 = ctx.$implicit;
+    const header_r2 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", header_r1, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", header_r2, " ");
+} }
+function PeripheralsComponent_tr_18_td_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const data_r5 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r5, " ");
+} }
+function PeripheralsComponent_tr_18_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, PeripheralsComponent_tr_18_td_1_Template, 2, 1, "td", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const row_r3 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", row_r3);
 } }
 class PeripheralsComponent {
     constructor(service) {
@@ -557,7 +575,7 @@ class PeripheralsComponent {
     }
 }
 PeripheralsComponent.ɵfac = function PeripheralsComponent_Factory(t) { return new (t || PeripheralsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"])); };
-PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PeripheralsComponent, selectors: [["peripherals"]], decls: 40, vars: 1, consts: [[1, "collapsible"], [1, "collapsible-header"], [1, "material-icons"], [1, "collapsible-body"], [1, "row"], [1, "col", "s12"], [1, "card"], [1, "card-content"], [1, "card-title", "center"], [4, "ngFor", "ngForOf"]], template: function PeripheralsComponent_Template(rf, ctx) { if (rf & 1) {
+PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PeripheralsComponent, selectors: [["peripherals"]], decls: 40, vars: 2, consts: [[1, "collapsible"], [1, "collapsible-header"], [1, "material-icons"], [1, "collapsible-body"], [1, "row"], [1, "col", "s12"], [1, "card"], [1, "card-content"], [1, "card-title", "center"], [4, "ngFor", "ngForOf"]], template: function PeripheralsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
@@ -581,7 +599,7 @@ PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "tbody");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "tr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, PeripheralsComponent_tr_18_Template, 2, 1, "tr", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -630,6 +648,8 @@ PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.peripheralsInfo.connectedDeviceHeader);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.peripheralsInfo.connectedDevice);
     } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BlcmlwaGVyYWxzL3BlcmlwaGVyYWxzLmNvbXBvbmVudC5jc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PeripheralsComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -778,10 +798,10 @@ class XmlService {
             this.networkInfo.iPv6 = Object.values(response.json().Status.Network[0].IPv6[0]);
             //Peripheral Items: ConnectedDevice & Cameras
             this.peripheralsInfo.connectedDevice = this.getValuesFromObjArray(Object.values(response.json().Status.Peripherals[0].ConnectedDevice));
-            let test = Object.values(this.peripheralsInfo.connectedDevice[0]);
-            test[0] = Object.values(test[0])[0];
-            console.log(test);
-            console.log(this.getValuesFromObjArray(this.peripheralsInfo.connectedDevice));
+            // let test = Object.values(this.peripheralsInfo.connectedDevice[0]);
+            // test[0] = Object.values(test[0])[0];
+            // console.log(test);
+            // console.log(this.getValuesFromObjArray(this.peripheralsInfo.connectedDevice));
             this.peripheralsInfo.connectedDeviceHeader = this.replace$(Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]));
         });
     }
