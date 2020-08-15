@@ -23,10 +23,12 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <!-- <td *ngFor="let item of networkInfo.ethernet">
-                                {{item}}
-                                </td> -->
+                            <tr *ngFor="let row of peripheralsInfo.connectedDevice"
+                            >
+                            <td *ngFor="let data of row"
+                            >
+                                {{data}}
+                            </td>
                             </tr> 
                         </tbody>
                     </table>

@@ -16,11 +16,12 @@ export class NetworkComponent implements OnInit {
   constructor( private service: XmlService) { 
 
     this.networkInfo = service.networkInfo;
-// constructor (http: Http){
+
+
+
+    // constructor (http: Http){
   // this.service.getXml()
   //  .subscribe(response => {
-   
-   
    
   // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
   // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);

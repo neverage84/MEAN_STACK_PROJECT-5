@@ -58,11 +58,11 @@ export class XmlService {
     
     //Peripheral Items: ConnectedDevice & Cameras
     this.peripheralsInfo.connectedDevice = this.getValuesFromObjArray(Object.values(response.json().Status.Peripherals[0].ConnectedDevice));
-    let test = Object.values(this.peripheralsInfo.connectedDevice[0]);
-    test[0] = Object.values(test[0])[0];
-    console.log(test);
+    // let test = Object.values(this.peripheralsInfo.connectedDevice[0]);
+    // test[0] = Object.values(test[0])[0];
+    // console.log(test);
     
-    console.log(this.getValuesFromObjArray(this.peripheralsInfo.connectedDevice));
+    // console.log(this.getValuesFromObjArray(this.peripheralsInfo.connectedDevice));
     
     
     this.peripheralsInfo.connectedDeviceHeader = this.replace$(Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]))

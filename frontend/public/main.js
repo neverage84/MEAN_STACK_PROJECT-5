@@ -750,11 +750,25 @@ class XmlService {
             this.getXml();
         });
     }
-    //function to take response, replace $ with "Item" as that seems to be the relevant info.
+    //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
     replace$(headerArr) {
         headerArr[0] = "Item";
         return headerArr;
     }
+    ;
+    //function to get values from each object in array with item value being the first one
+    getValuesFromObjArray(ObjArr) {
+        let newTest = ObjArr.map((v) => {
+            let test = Object.values(v);
+            test[0] = Object.values(test[0])[0];
+            return test;
+        });
+        // let test = Object.values(ObjArr[0]);
+        // test[0] = Object.values(test[0])[0];
+        // return test;
+        return newTest;
+    }
+    //function that runs the http request for xml file
     getXml() {
         this.http.get(this.url)
             .subscribe(response => {
@@ -763,7 +777,11 @@ class XmlService {
             this.networkInfo.iPv4 = Object.values(response.json().Status.Network[0].IPv4[0]);
             this.networkInfo.iPv6 = Object.values(response.json().Status.Network[0].IPv6[0]);
             //Peripheral Items: ConnectedDevice & Cameras
-            this.peripheralsInfo.connectedDevice = Object.values(response.json().Status.Peripherals[0].ConnectedDevice);
+            this.peripheralsInfo.connectedDevice = this.getValuesFromObjArray(Object.values(response.json().Status.Peripherals[0].ConnectedDevice));
+            let test = Object.values(this.peripheralsInfo.connectedDevice[0]);
+            test[0] = Object.values(test[0])[0];
+            console.log(test);
+            console.log(this.getValuesFromObjArray(this.peripheralsInfo.connectedDevice));
             this.peripheralsInfo.connectedDeviceHeader = this.replace$(Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]));
         });
     }
