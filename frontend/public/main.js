@@ -94,10 +94,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _display_display_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./display/display.component */ "./src/app/display/display.component.ts");
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
 /* harmony import */ var _xml_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./xml.service */ "./src/app/xml.service.ts");
+/* harmony import */ var _capabilities_capabilities_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./capabilities/capabilities.component */ "./src/app/capabilities/capabilities.component.ts");
 
 
 
 // import { AppRoutingModule } from './app-routing.module';
+
 
 
 
@@ -140,7 +142,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _contact_info_contact_info_component__WEBPACK_IMPORTED_MODULE_12__["ContactInfoComponent"],
         _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_13__["DashboardComponent"],
         _display_display_component__WEBPACK_IMPORTED_MODULE_14__["DisplayComponent"],
-        _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarComponent"],
+        _capabilities_capabilities_component__WEBPACK_IMPORTED_MODULE_17__["CapabilitiesComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
         _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"],
         // AppRoutingModule,
@@ -159,7 +162,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _contact_info_contact_info_component__WEBPACK_IMPORTED_MODULE_12__["ContactInfoComponent"],
                     _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_13__["DashboardComponent"],
                     _display_display_component__WEBPACK_IMPORTED_MODULE_14__["DisplayComponent"],
-                    _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarComponent"]
+                    _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_15__["NavbarComponent"],
+                    _capabilities_capabilities_component__WEBPACK_IMPORTED_MODULE_17__["CapabilitiesComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -208,6 +212,42 @@ CallComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 selector: 'app-call',
                 templateUrl: './call.component.html',
                 styleUrls: ['./call.component.css']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/capabilities/capabilities.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/capabilities/capabilities.component.ts ***!
+  \********************************************************/
+/*! exports provided: CapabilitiesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CapabilitiesComponent", function() { return CapabilitiesComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+class CapabilitiesComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+CapabilitiesComponent.ɵfac = function CapabilitiesComponent_Factory(t) { return new (t || CapabilitiesComponent)(); };
+CapabilitiesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CapabilitiesComponent, selectors: [["capabilities"]], decls: 2, vars: 0, template: function CapabilitiesComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "capabilities works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NhcGFiaWxpdGllcy9jYXBhYmlsaXRpZXMuY29tcG9uZW50LmNzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CapabilitiesComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'capabilities',
+                templateUrl: './capabilities.component.html',
+                styleUrls: ['./capabilities.component.css']
             }]
     }], function () { return []; }, null); })();
 
@@ -299,6 +339,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _network_network_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../network/network.component */ "./src/app/network/network.component.ts");
 /* harmony import */ var _peripherals_peripherals_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../peripherals/peripherals.component */ "./src/app/peripherals/peripherals.component.ts");
+/* harmony import */ var _capabilities_capabilities_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../capabilities/capabilities.component */ "./src/app/capabilities/capabilities.component.ts");
+
 
 
 
@@ -309,14 +351,15 @@ class DisplayComponent {
     }
 }
 DisplayComponent.ɵfac = function DisplayComponent_Factory(t) { return new (t || DisplayComponent)(); };
-DisplayComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DisplayComponent, selectors: [["display"]], decls: 6, vars: 0, template: function DisplayComponent_Template(rf, ctx) { if (rf & 1) {
+DisplayComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DisplayComponent, selectors: [["display"]], decls: 7, vars: 0, template: function DisplayComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "network");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "peripherals");
-    } }, directives: [_network_network_component__WEBPACK_IMPORTED_MODULE_1__["NetworkComponent"], _peripherals_peripherals_component__WEBPACK_IMPORTED_MODULE_2__["PeripheralsComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3BsYXkvZGlzcGxheS5jb21wb25lbnQuY3NzIn0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "capabilities");
+    } }, directives: [_network_network_component__WEBPACK_IMPORTED_MODULE_1__["NetworkComponent"], _peripherals_peripherals_component__WEBPACK_IMPORTED_MODULE_2__["PeripheralsComponent"], _capabilities_capabilities_component__WEBPACK_IMPORTED_MODULE_3__["CapabilitiesComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3BsYXkvZGlzcGxheS5jb21wb25lbnQuY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DisplayComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -807,8 +850,9 @@ class XmlService {
             idealArr[1] = Object.values((idealArr[1])[0])[0];
             return idealArr;
         });
+        //only cameras with value of "True" are returned
         return formattedArr.filter((arr) => {
-            return arr.length > 8;
+            return arr[2] == "True";
         });
     }
     //function that runs the http request for xml file

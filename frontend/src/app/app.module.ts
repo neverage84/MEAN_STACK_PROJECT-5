@@ -21,6 +21,7 @@ import { DisplayComponent } from './display/display.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { XmlService } from './xml.service';
+import { CapabilitiesComponent } from './capabilities/capabilities.component';
 
 
 const routes: Routes = [
@@ -40,7 +41,8 @@ const routes: Routes = [
     ContactInfoComponent,
     DashboardComponent,
     DisplayComponent,
-    NavbarComponent
+    NavbarComponent,
+    CapabilitiesComponent
   ],
   imports: [
     BrowserModule,
