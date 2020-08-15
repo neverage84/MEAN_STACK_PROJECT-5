@@ -16,6 +16,7 @@ export interface Peripherals_S{
 @Injectable({
   providedIn: 'root'
 })
+
 export class XmlService {
 
   private url = 'http://localhost:3000/xml';
@@ -23,6 +24,13 @@ export class XmlService {
   public networkInfo: Network_S = {ethernet : [], iPv4: [], iPv6:[] };
   public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: []};
  
+
+  //function to take response, replace $ with "Item" as that seems to be the relevant info.
+  replace$(headerArr){
+    headerArr[0] = "Item";
+    return headerArr;
+  }
+
   getXml() {
     this.http.get(this.url)
     .subscribe(response => {
@@ -35,10 +43,13 @@ export class XmlService {
     
     //Peripheral Items: ConnectedDevice & Cameras
     this.peripheralsInfo.connectedDevice = Object.values(response.json().Status.Peripherals[0].ConnectedDevice);
-    this.peripheralsInfo.connectedDeviceHeader = Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0])
-    })
-    ;
+    
+    
+    this.peripheralsInfo.connectedDeviceHeader = this.replace$(Object.keys(response.json().Status.Peripherals[0].ConnectedDevice[0]))
+    });
+    
   }
+
   
   constructor(private http: Http) { 
 // this.service.getXml()
@@ -53,6 +64,9 @@ export class XmlService {
     this.getXml();
    
   });
+
+ 
+  }
   }
 
   
@@ -63,6 +77,6 @@ export class XmlService {
   
 
   
-}
+
 
 
