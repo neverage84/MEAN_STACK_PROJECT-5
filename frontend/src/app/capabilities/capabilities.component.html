@@ -16,20 +16,20 @@
                     <table>
                         <thead>
                             <tr>
-                                <!-- <th *ngFor="let header of peripheralsInfo.connectedDeviceHeader"
+                                <th *ngFor="let header of capabilitiesInfo.conferenceHeader"
                                 >{{header}}
-                            </th> -->
+                            </th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            <!-- <tr *ngFor="let row of peripheralsInfo.connectedDevice"
-                            >
-                            <td *ngFor="let data of row"
-                            >
-                                {{data}}
-                            </td>
-                            </tr>  -->
+                            <tr >
+                            
+                            <td *ngFor="let data of capabilitiesInfo.conference"
+                            > {{data}}
+                        </td>
+                           
+                            </tr> 
                         </tbody>
                     </table>
 

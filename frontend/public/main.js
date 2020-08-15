@@ -229,20 +229,25 @@ CallComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CapabilitiesComponent", function() { return CapabilitiesComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _xml_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../xml.service */ "./src/app/xml.service.ts");
+
 
 
 class CapabilitiesComponent {
-    constructor() { }
+    constructor(service) {
+        this.capabilitiesInfo = service.capabilitiesInfo;
+        console.log(this.capabilitiesInfo);
+    }
     ngOnInit() {
     }
 }
-CapabilitiesComponent.ɵfac = function CapabilitiesComponent_Factory(t) { return new (t || CapabilitiesComponent)(); };
+CapabilitiesComponent.ɵfac = function CapabilitiesComponent_Factory(t) { return new (t || CapabilitiesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"])); };
 CapabilitiesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CapabilitiesComponent, selectors: [["capabilities"]], decls: 17, vars: 0, consts: [[1, "collapsible"], [1, "collapsible-header"], [1, "material-icons"], [1, "collapsible-body"], [1, "row"], [1, "col", "s12"], [1, "card"], [1, "card-content"], [1, "card-title", "center"]], template: function CapabilitiesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "i", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "camera_alt");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "check_box");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Capabilities");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -275,7 +280,7 @@ CapabilitiesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
                 templateUrl: './capabilities.component.html',
                 styleUrls: ['./capabilities.component.css']
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: _xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"] }]; }, null); })();
 
 
 /***/ }),
@@ -665,7 +670,6 @@ function PeripheralsComponent_tr_29_Template(rf, ctx) { if (rf & 1) {
 class PeripheralsComponent {
     constructor(service) {
         this.peripheralsInfo = service.peripheralsInfo;
-        console.log(this.peripheralsInfo);
     }
     ngOnInit() {
     }
@@ -742,9 +746,6 @@ PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
                 styleUrls: ['./peripherals.component.css']
             }]
     }], function () { return [{ type: _xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"] }]; }, null); })();
-function tableHeaders(item) {
-    console.log(item);
-}
 
 
 /***/ }),
@@ -846,6 +847,7 @@ class XmlService {
         this.url = 'http://localhost:3000/xml';
         this.networkInfo = { ethernet: [], iPv4: [], iPv6: [] };
         this.peripheralsInfo = { connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: [] };
+        this.capabilitiesInfo = { conference: [], conferenceHeader: [] };
         // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
         // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         this.getXml();

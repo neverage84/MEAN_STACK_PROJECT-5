@@ -85,6 +85,9 @@ export class XmlService {
     this.peripheralsInfo.connectedCameraHeader = this.replace$(Object.keys(response.json().Status.Cameras[0].Camera[0]));
     this.peripheralsInfo.connectedCamera = this.getValuesFromObjArrayCamera(Object.values(response.json().Status.Cameras[0].Camera));
 
+    //Capabilities item: Conference
+    this.capabilitiesInfo.conferenceHeader = Object.keys(response.json().Status.Capabilities[0].Conference[0]);
+    this.capabilitiesInfo.conference = Object.values(response.json().Status.Capabilities[0].Conference[0]);
     });
     
   }
