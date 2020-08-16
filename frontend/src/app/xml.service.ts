@@ -142,6 +142,33 @@ export class XmlService {
       return idealArr;
 
      }
+     //function to return Software Headers
+     getSoftwareHeader(obj){
+       let idealArr = [];
+      idealArr = Object.keys(obj)
+      
+      idealArr[1] = Object.keys(Object.values(obj)[1][0]);
+      for (let i = 1; i < idealArr[1].length; i++){
+        idealArr.push(idealArr[1][i]);
+      }
+      idealArr[1] = idealArr[1][0];
+
+       return idealArr;
+     }
+
+     //function to return Software data
+     getSoftwareData(obj){
+      let idealArr = [];
+     idealArr = Object.values(obj);
+
+     idealArr[1] = Object.values(Object.values(obj)[1][0]);
+     for (let i = 1; i < idealArr[1].length; i++){
+      idealArr.push(idealArr[1][i]);
+    }
+    idealArr[1] = idealArr[1][0];
+
+      return idealArr;
+    }
 
   //function that runs the http request for xml file
   getXml() {
@@ -196,6 +223,9 @@ export class XmlService {
 
    this.systemInfo.stateHeader = Object.keys(response.json().Status.SystemUnit[0].State[0]);
    this.systemInfo.state = Object.values(response.json().Status.SystemUnit[0].State[0]);
+
+  this.systemInfo.softwareHeader = this.getSoftwareHeader(response.json().Status.SystemUnit[0].Software[0]);
+  this.systemInfo.software = this.getSoftwareData(response.json().Status.SystemUnit[0].Software[0]);
 });
 
     
