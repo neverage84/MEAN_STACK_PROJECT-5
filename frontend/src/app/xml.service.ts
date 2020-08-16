@@ -82,6 +82,7 @@ export class XmlService {
     return formattedArr
    }
 
+
    //Camera obj Arr as it's different
    getValuesFromObjArrayCamera(ObjArr){
 
@@ -110,6 +111,16 @@ export class XmlService {
   
      }
   
+     //Diagnostics Function
+     getDiagnostics(arr){
+       let idealArr = []
+      for (let i = 0; i < arr.length; i++){
+        idealArr.push(arr[i][1]);
+      }
+
+      return idealArr;
+
+     }
 
   //function that runs the http request for xml file
   getXml() {
@@ -150,8 +161,7 @@ export class XmlService {
   //Contact item: Details
   let diagDateFormatted = new Date(response.json().Status.SystemUnit[0].Diagnostics[0].LastRun[0]._.toString())
   this.diagnosticInfo.diaTime = diagDateFormatted.toString();
-// this.diagnosticInfo.diagnostics = response.json().Status.SystemUnit[0].Diagnostics[0].LastRun[0]._;
-
+  this.diagnosticInfo.diagnostics = this.getDiagnostics(this.getValuesFromObjArray(response.json().Status.SystemUnit[0].Diagnostics[0].Message));
   });
 
     

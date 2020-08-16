@@ -12,7 +12,7 @@ timeInfo : Time_S;
 
   constructor(service: XmlService) { 
     this.timeInfo = service.timeInfo;
-    console.log(this.timeInfo);
+    
   }
 
   ngOnInit(): void {
