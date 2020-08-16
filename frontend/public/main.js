@@ -426,7 +426,6 @@ __webpack_require__.r(__webpack_exports__);
 class ContactInfoComponent {
     constructor(service) {
         this.contactInfo = service.contactInfo;
-        console.log(this.contactInfo);
     }
     ngOnInit() {
     }
@@ -551,11 +550,13 @@ DashboardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisplayComponent", function() { return DisplayComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _network_network_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../network/network.component */ "./src/app/network/network.component.ts");
-/* harmony import */ var _peripherals_peripherals_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../peripherals/peripherals.component */ "./src/app/peripherals/peripherals.component.ts");
-/* harmony import */ var _capabilities_capabilities_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../capabilities/capabilities.component */ "./src/app/capabilities/capabilities.component.ts");
-/* harmony import */ var _call_call_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../call/call.component */ "./src/app/call/call.component.ts");
-/* harmony import */ var _contact_info_contact_info_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../contact-info/contact-info.component */ "./src/app/contact-info/contact-info.component.ts");
+/* harmony import */ var _system_time_system_time_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../system-time/system-time.component */ "./src/app/system-time/system-time.component.ts");
+/* harmony import */ var _network_network_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../network/network.component */ "./src/app/network/network.component.ts");
+/* harmony import */ var _peripherals_peripherals_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../peripherals/peripherals.component */ "./src/app/peripherals/peripherals.component.ts");
+/* harmony import */ var _capabilities_capabilities_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../capabilities/capabilities.component */ "./src/app/capabilities/capabilities.component.ts");
+/* harmony import */ var _call_call_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../call/call.component */ "./src/app/call/call.component.ts");
+/* harmony import */ var _contact_info_contact_info_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../contact-info/contact-info.component */ "./src/app/contact-info/contact-info.component.ts");
+
 
 
 
@@ -569,17 +570,18 @@ class DisplayComponent {
     }
 }
 DisplayComponent.ɵfac = function DisplayComponent_Factory(t) { return new (t || DisplayComponent)(); };
-DisplayComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DisplayComponent, selectors: [["display"]], decls: 9, vars: 0, template: function DisplayComponent_Template(rf, ctx) { if (rf & 1) {
+DisplayComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DisplayComponent, selectors: [["display"]], decls: 10, vars: 0, template: function DisplayComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "network");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "peripherals");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "capabilities");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "call");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "contact-info");
-    } }, directives: [_network_network_component__WEBPACK_IMPORTED_MODULE_1__["NetworkComponent"], _peripherals_peripherals_component__WEBPACK_IMPORTED_MODULE_2__["PeripheralsComponent"], _capabilities_capabilities_component__WEBPACK_IMPORTED_MODULE_3__["CapabilitiesComponent"], _call_call_component__WEBPACK_IMPORTED_MODULE_4__["CallComponent"], _contact_info_contact_info_component__WEBPACK_IMPORTED_MODULE_5__["ContactInfoComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3BsYXkvZGlzcGxheS5jb21wb25lbnQuY3NzIn0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "system-time");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "network");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "peripherals");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "capabilities");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "call");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "contact-info");
+    } }, directives: [_system_time_system_time_component__WEBPACK_IMPORTED_MODULE_1__["SystemTimeComponent"], _network_network_component__WEBPACK_IMPORTED_MODULE_2__["NetworkComponent"], _peripherals_peripherals_component__WEBPACK_IMPORTED_MODULE_3__["PeripheralsComponent"], _capabilities_capabilities_component__WEBPACK_IMPORTED_MODULE_4__["CapabilitiesComponent"], _call_call_component__WEBPACK_IMPORTED_MODULE_5__["CallComponent"], _contact_info_contact_info_component__WEBPACK_IMPORTED_MODULE_6__["ContactInfoComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3BsYXkvZGlzcGxheS5jb21wb25lbnQuY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DisplayComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -950,27 +952,35 @@ PeripheralsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SystemTimeComponent", function() { return SystemTimeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _xml_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../xml.service */ "./src/app/xml.service.ts");
+
 
 
 class SystemTimeComponent {
-    constructor() { }
+    constructor(service) {
+        this.timeInfo = service.timeInfo;
+        console.log(this.timeInfo);
+    }
     ngOnInit() {
     }
 }
-SystemTimeComponent.ɵfac = function SystemTimeComponent_Factory(t) { return new (t || SystemTimeComponent)(); };
-SystemTimeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SystemTimeComponent, selectors: [["app-system-time"]], decls: 2, vars: 0, template: function SystemTimeComponent_Template(rf, ctx) { if (rf & 1) {
+SystemTimeComponent.ɵfac = function SystemTimeComponent_Factory(t) { return new (t || SystemTimeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"])); };
+SystemTimeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SystemTimeComponent, selectors: [["system-time"]], decls: 2, vars: 1, template: function SystemTimeComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "system-time works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.timeInfo.time);
     } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N5c3RlbS10aW1lL3N5c3RlbS10aW1lLmNvbXBvbmVudC5jc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SystemTimeComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-                selector: 'app-system-time',
+                selector: 'system-time',
                 templateUrl: './system-time.component.html',
                 styleUrls: ['./system-time.component.css']
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: _xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1039,6 +1049,7 @@ class XmlService {
         this.capabilitiesInfo = { conference: [], conferenceHeader: [] };
         this.callsInfo = { callsOne: [], callsTwo: [], callsHeaderOne: [], callsHeaderTwo: [] };
         this.contactInfo = { name: [], email: [], number: [] };
+        this.timeInfo = { time: "" };
         // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
         // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         this.getXml();
@@ -1106,6 +1117,9 @@ class XmlService {
             this.contactInfo.email = response.json().Status.UserInterface[0].ContactInfo[0].ContactMethod[0].Number;
             this.contactInfo.number = response.json().Status.UserInterface[0].ContactInfo[0].ContactMethod[1].Number;
             this.contactInfo.name = response.json().Status.UserInterface[0].ContactInfo[0].Name;
+            //Contact item: Details
+            let dateFormatted = new Date(response.json().Status.Time[0].SystemTime.toString());
+            this.timeInfo.time = dateFormatted.toString();
         });
     }
 }
