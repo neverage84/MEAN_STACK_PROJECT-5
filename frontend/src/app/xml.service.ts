@@ -33,9 +33,9 @@ export interface Calls_S{
 
 //Contacts Binding
 export interface Contact_S{
-  name : string;
-  email: string;
-  number : string;
+  name : string[];
+  email: string[];
+  number : string[];
 }
 
 @Injectable({
@@ -50,7 +50,7 @@ export class XmlService {
   public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: []};
   public capabilitiesInfo: Capabililites_S = {conference:[], conferenceHeader: []};
   public callsInfo: Calls_S = {callsOne:[], callsTwo:[], callsHeaderOne:[], callsHeaderTwo:[]};
-  public contactInfo: Contact_S = {name: "", email: "", number: ""};
+  public contactInfo: Contact_S = {name: [], email: [], number: []};
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
   replace$(headerArr){
     headerArr[0] = "Item";
@@ -124,6 +124,11 @@ export class XmlService {
     this.callsInfo.callsHeaderTwo = this.replace$(Object.keys(response.json().Status.Call[0])).splice(9);
     this.callsInfo.callsOne = this.getValuesFromObjArrayCall(Object.values(response.json().Status.Call[0])).splice(0,9);
     this.callsInfo.callsTwo = this.getValuesFromObjArrayCall(Object.values(response.json().Status.Call[0])).splice(9);
+  
+    //Contact item: Details
+   this.contactInfo.email = response.json().Status.UserInterface[0].ContactInfo[0].ContactMethod[0].Number;
+   this.contactInfo.number = response.json().Status.UserInterface[0].ContactInfo[0].ContactMethod[1].Number;
+   this.contactInfo.name = response.json().Status.UserInterface[0].ContactInfo[0].Name;
   });
 
     

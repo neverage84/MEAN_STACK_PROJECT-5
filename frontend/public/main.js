@@ -420,14 +420,18 @@ CapabilitiesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactInfoComponent", function() { return ContactInfoComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _xml_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../xml.service */ "./src/app/xml.service.ts");
+
 
 
 class ContactInfoComponent {
-    constructor() { }
+    constructor(service) {
+        this.contactInfo = service.contactInfo;
+    }
     ngOnInit() {
     }
 }
-ContactInfoComponent.ɵfac = function ContactInfoComponent_Factory(t) { return new (t || ContactInfoComponent)(); };
+ContactInfoComponent.ɵfac = function ContactInfoComponent_Factory(t) { return new (t || ContactInfoComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"])); };
 ContactInfoComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ContactInfoComponent, selectors: [["contact-info"]], decls: 24, vars: 0, consts: [[1, "collapsible"], [1, "collapsible-header"], [1, "material-icons"], [1, "collapsible-body"], [1, "row"], [1, "col", "s12"], [1, "card"], [1, "card-content"], [1, "card-title", "center"]], template: function ContactInfoComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li");
@@ -478,7 +482,7 @@ ContactInfoComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
                 templateUrl: './contact-info.component.html',
                 styleUrls: ['./contact-info.component.css']
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: _xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1017,6 +1021,7 @@ class XmlService {
         this.peripheralsInfo = { connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: [] };
         this.capabilitiesInfo = { conference: [], conferenceHeader: [] };
         this.callsInfo = { callsOne: [], callsTwo: [], callsHeaderOne: [], callsHeaderTwo: [] };
+        this.contactInfo = { name: "", email: "", number: "" };
         // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
         // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         this.getXml();
