@@ -238,7 +238,6 @@ function CallComponent_td_25_Template(rf, ctx) { if (rf & 1) {
 class CallComponent {
     constructor(service) {
         this.callsInfo = service.callsInfo;
-        console.log(this.callsInfo);
     }
     ngOnInit() {
     }
@@ -427,6 +426,7 @@ __webpack_require__.r(__webpack_exports__);
 class ContactInfoComponent {
     constructor(service) {
         this.contactInfo = service.contactInfo;
+        console.log(this.contactInfo);
     }
     ngOnInit() {
     }
@@ -1021,7 +1021,7 @@ class XmlService {
         this.peripheralsInfo = { connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: [] };
         this.capabilitiesInfo = { conference: [], conferenceHeader: [] };
         this.callsInfo = { callsOne: [], callsTwo: [], callsHeaderOne: [], callsHeaderTwo: [] };
-        this.contactInfo = { name: "", email: "", number: "" };
+        this.contactInfo = { name: [], email: [], number: [] };
         // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
         // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         this.getXml();
@@ -1085,6 +1085,10 @@ class XmlService {
             this.callsInfo.callsHeaderTwo = this.replace$(Object.keys(response.json().Status.Call[0])).splice(9);
             this.callsInfo.callsOne = this.getValuesFromObjArrayCall(Object.values(response.json().Status.Call[0])).splice(0, 9);
             this.callsInfo.callsTwo = this.getValuesFromObjArrayCall(Object.values(response.json().Status.Call[0])).splice(9);
+            //Contact item: Details
+            this.contactInfo.email = response.json().Status.UserInterface[0].ContactInfo[0].ContactMethod[0].Number;
+            this.contactInfo.number = response.json().Status.UserInterface[0].ContactInfo[0].ContactMethod[1].Number;
+            this.contactInfo.name = response.json().Status.UserInterface[0].ContactInfo[0].Name;
         });
     }
 }
