@@ -1,3 +1,6 @@
 .card {
     border-radius: 25px;
 }
+.collapsible-header{
+    justify-content: center;
+}
