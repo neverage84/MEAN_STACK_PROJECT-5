@@ -1,13 +1,19 @@
+import { Time_S, XmlService } from './../xml.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-system-time',
+  selector: 'system-time',
   templateUrl: './system-time.component.html',
   styleUrls: ['./system-time.component.css']
 })
 export class SystemTimeComponent implements OnInit {
 
-  constructor() { }
+timeInfo : Time_S;
+
+  constructor(service: XmlService) { 
+    this.timeInfo = service.timeInfo;
+    console.log(this.timeInfo);
+  }
 
   ngOnInit(): void {
   }

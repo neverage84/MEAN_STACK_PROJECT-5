@@ -12,7 +12,7 @@ export class ContactInfoComponent implements OnInit {
 
   constructor(service: XmlService) { 
     this.contactInfo = service.contactInfo;
-    console.log(this.contactInfo);
+  
   }
 
   ngOnInit(): void {
