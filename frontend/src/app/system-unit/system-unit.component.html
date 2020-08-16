@@ -50,25 +50,24 @@
         <div class="col s12">
           <div class="card ">
             <div class="card-content ">
-              <span class="card-title center">iPv4/iPv6</span>
+              <span class="card-title center">Fan</span>
 <!-- iPv4/iPv6 -->
 
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>Gateway</th>
-                                <th>SubnetMask</th>
+                                <th *ngFor="let header of systemInfo.fanHeader"
+                                >{{header}}</th>
+                                
                             </tr>
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>iPv4</td>
-                                <!-- <td *ngFor="let item of networkInfo.iPv4">
-                                {{item}}
-                                </td> -->
+                            <tr *ngFor="let row of systemInfo.fan"
+                            >
+                            <td *ngFor="let data of row"
+                            >{{data}}</td>
+                                
                             </tr> 
                         </tbody>
                     </table>

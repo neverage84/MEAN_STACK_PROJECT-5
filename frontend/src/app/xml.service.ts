@@ -51,12 +51,19 @@ export interface Diagnostics_S{
 
 //System Binding
 export interface System_S{
-  system: any[];
+  
   serialNumber: string[];
   temperature: string[];
   productId: string[];
   productPlatform: string[];
   productType: string[];
+  fan: any[];
+  fanHeader: any[];
+  software: any[];
+  softwareHeader: any[];
+  state: any[];
+  stateHeader: any[];
+  
 }
 
 
@@ -75,7 +82,7 @@ export class XmlService {
   public contactInfo: Contact_S = {name: [], email: [], number: []};
   public timeInfo: Time_S = {time: ""};
   public diagnosticInfo: Diagnostics_S = {diaTime: "", diagnostics: []};
-  public systemInfo: System_S = {system: [], serialNumber: [], temperature: [], productId: [], productPlatform: [], productType: []};
+  public systemInfo: System_S = { serialNumber: [], temperature: [], productId: [], productPlatform: [], productType: [], fan: [], fanHeader:[], software:[], softwareHeader:[], state:[], stateHeader:[]};
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
   replace$(headerArr){
     headerArr[0] = "Item";
@@ -184,6 +191,8 @@ export class XmlService {
    this.systemInfo.productType = response.json().Status.SystemUnit[0].ProductType;
    this.systemInfo.temperature = response.json().Status.SystemUnit[0].Hardware[0].Temperature;
 
+   this.systemInfo.fanHeader = this.replace$(Object.keys(response.json().Status.SystemUnit[0].Hardware[0].Monitoring[0].Fan[0]));
+   this.systemInfo.fan = this.getValuesFromObjArray(Object.values(response.json().Status.SystemUnit[0].Hardware[0].Monitoring[0].Fan));
 });
 
     
