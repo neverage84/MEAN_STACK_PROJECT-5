@@ -22,6 +22,7 @@ import { DisplayComponent } from './display/display.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { XmlService } from './xml.service';
 import { CapabilitiesComponent } from './capabilities/capabilities.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const routes: Routes = [
@@ -42,7 +43,8 @@ const routes: Routes = [
     DashboardComponent,
     DisplayComponent,
     NavbarComponent,
-    CapabilitiesComponent
+    CapabilitiesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

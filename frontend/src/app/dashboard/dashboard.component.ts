@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   constructor(service: XmlService) { 
 
     this.diagnosticInfo = service.diagnosticInfo;
-    console.log(this.diagnosticInfo);
+   
   }
 
   ngOnInit(): void {

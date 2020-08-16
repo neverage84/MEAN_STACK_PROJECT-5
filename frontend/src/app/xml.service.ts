@@ -49,6 +49,17 @@ export interface Diagnostics_S{
   diagnostics: any[];
 }
 
+//System Binding
+export interface System_S{
+  system: any[];
+  serialNumber: string;
+  temperature: string;
+  productId: string;
+  productPlatform: string;
+  productType: string;
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -64,6 +75,7 @@ export class XmlService {
   public contactInfo: Contact_S = {name: [], email: [], number: []};
   public timeInfo: Time_S = {time: ""};
   public diagnosticInfo: Diagnostics_S = {diaTime: "", diagnostics: []};
+  public systemInfo: System_S = {system: [], serialNumber: "", temperature: "", productId: "", productPlatform: "", productType: ""};
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
   replace$(headerArr){
     headerArr[0] = "Item";
@@ -113,9 +125,11 @@ export class XmlService {
   
      //Diagnostics Function
      getDiagnostics(arr){
-       let idealArr = []
+       
+      let idealArr = []
       for (let i = 0; i < arr.length; i++){
-        idealArr.push(arr[i][1]);
+        idealArr.push(Object.values(arr[i][2][0])[0]);
+        idealArr.push(Object.values(arr[i][1][0])[0]);
       }
 
       return idealArr;
