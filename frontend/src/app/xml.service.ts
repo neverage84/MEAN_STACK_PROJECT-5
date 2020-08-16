@@ -52,11 +52,11 @@ export interface Diagnostics_S{
 //System Binding
 export interface System_S{
   system: any[];
-  serialNumber: string;
-  temperature: string;
-  productId: string;
-  productPlatform: string;
-  productType: string;
+  serialNumber: string[];
+  temperature: string[];
+  productId: string[];
+  productPlatform: string[];
+  productType: string[];
 }
 
 
@@ -75,7 +75,7 @@ export class XmlService {
   public contactInfo: Contact_S = {name: [], email: [], number: []};
   public timeInfo: Time_S = {time: ""};
   public diagnosticInfo: Diagnostics_S = {diaTime: "", diagnostics: []};
-  public systemInfo: System_S = {system: [], serialNumber: "", temperature: "", productId: "", productPlatform: "", productType: ""};
+  public systemInfo: System_S = {system: [], serialNumber: [], temperature: [], productId: [], productPlatform: [], productType: []};
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
   replace$(headerArr){
     headerArr[0] = "Item";
@@ -172,11 +172,19 @@ export class XmlService {
   let dateFormatted = new Date(response.json().Status.Time[0].SystemTime.toString())
   this.timeInfo.time = dateFormatted.toString();
 
-  //Contact item: Details
+  //System item: Details
   let diagDateFormatted = new Date(response.json().Status.SystemUnit[0].Diagnostics[0].LastRun[0]._.toString())
   this.diagnosticInfo.diaTime = diagDateFormatted.toString();
   this.diagnosticInfo.diagnostics = this.getDiagnostics(this.getValuesFromObjArray(response.json().Status.SystemUnit[0].Diagnostics[0].Message));
-  });
+  
+   //System item: Details
+   this.systemInfo.serialNumber = response.json().Status.SystemUnit[0].Hardware[0].Module[0].SerialNumber;
+   this.systemInfo.productId = response.json().Status.SystemUnit[0].ProductId;
+   this.systemInfo.productPlatform = response.json().Status.SystemUnit[0].ProductPlatform;
+   this.systemInfo.productType = response.json().Status.SystemUnit[0].ProductType;
+   this.systemInfo.temperature = response.json().Status.SystemUnit[0].Hardware[0].Temperature;
+
+});
 
     
   }

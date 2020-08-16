@@ -10,19 +10,27 @@
         <div class="col s12">
           <div class="card ">
             <div class="card-content">
-              <span class="card-title center">Ethernet</span>
+              <span class="card-title center">Hardware</span>
 <!-- Ethernet Table -->
 
                     <table>
                         <thead>
                             <tr>
-                                <th>MacAddress</th>
-                                <th>Speed</th>
+                                <th>ProductID</th>
+                                <th>Serial Number</th>
+                                <th>ProductPlatform</th>
+                                <th>ProductType</th>
+                                <th>Temperature</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
+                                <td>{{systemInfo.productId}}</td>
+                                <td>{{systemInfo.serialNumber}}</td>
+                                <td>{{systemInfo.productPlatform}}</td>
+                                <td>{{systemInfo.productType}}</td>
+                                <td>{{systemInfo.temperature}}</td>
                                 <!-- <td *ngFor="let item of networkInfo.ethernet">
                                 {{item}}
                                 </td> -->
