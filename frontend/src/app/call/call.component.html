@@ -15,11 +15,12 @@
 
                 <table>
                     <thead>
-                        <!-- <tr>
-                            <th *ngFor="let header of capabilitiesInfo.conferenceHeader"
-                            >{{header}}
-                        </th> -->
-                        <!-- </tr> -->
+                        <tr>
+                            <th *ngFor="let header of callsInfo.callsHeaderOne"
+                            >
+                            {{header}}
+                            </th>
+                        </tr>      
                     </thead>
 
                     <tbody>
@@ -31,6 +32,16 @@
                        
                         </tr> 
                     </tbody>
+                    <thead>
+                            <tr>
+                                <th *ngFor="let header of callsInfo.callsHeaderTwo"
+                                >
+                                {{header}}
+                                </th>
+                            </tr>      
+                        </thead>
+
+
                 </table>
 
 

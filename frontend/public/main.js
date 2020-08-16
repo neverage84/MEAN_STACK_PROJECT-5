@@ -193,14 +193,19 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CallComponent", function() { return CallComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _xml_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../xml.service */ "./src/app/xml.service.ts");
+
 
 
 class CallComponent {
-    constructor() { }
+    constructor(service) {
+        this.callsInfo = service.callsInfo;
+        console.log(this.callsInfo);
+    }
     ngOnInit() {
     }
 }
-CallComponent.ɵfac = function CallComponent_Factory(t) { return new (t || CallComponent)(); };
+CallComponent.ɵfac = function CallComponent_Factory(t) { return new (t || CallComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"])); };
 CallComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CallComponent, selectors: [["call"]], decls: 17, vars: 0, consts: [[1, "collapsible"], [1, "collapsible-header"], [1, "material-icons"], [1, "collapsible-body"], [1, "row"], [1, "col", "s12"], [1, "card"], [1, "card-content"], [1, "card-title", "center"]], template: function CallComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li");
@@ -239,7 +244,7 @@ CallComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 templateUrl: './call.component.html',
                 styleUrls: ['./call.component.css']
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: _xml_service__WEBPACK_IMPORTED_MODULE_1__["XmlService"] }]; }, null); })();
 
 
 /***/ }),
@@ -282,7 +287,6 @@ function CapabilitiesComponent_td_19_Template(rf, ctx) { if (rf & 1) {
 class CapabilitiesComponent {
     constructor(service) {
         this.capabilitiesInfo = service.capabilitiesInfo;
-        console.log(this.capabilitiesInfo);
     }
     ngOnInit() {
     }
@@ -908,6 +912,7 @@ class XmlService {
         this.networkInfo = { ethernet: [], iPv4: [], iPv6: [] };
         this.peripheralsInfo = { connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: [] };
         this.capabilitiesInfo = { conference: [], conferenceHeader: [] };
+        this.callsInfo = { calls: [], callsHeader: [] };
         // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
         // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         this.getXml();
@@ -959,6 +964,8 @@ class XmlService {
             //Capabilities item: Conference
             this.capabilitiesInfo.conferenceHeader = Object.keys(response.json().Status.Capabilities[0].Conference[0]);
             this.capabilitiesInfo.conference = Object.values(response.json().Status.Capabilities[0].Conference[0]);
+            //Calls item: Details
+            this.callsInfo.callsHeader = Object.keys(response.json().Status.Call[0]);
         });
     }
 }

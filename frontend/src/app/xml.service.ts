@@ -26,7 +26,8 @@ export interface Capabililites_S{
 //Calls Binding
 export interface Calls_S{
   calls : any[];
-  callsHeader : any[];
+  callsHeaderOne : any[];
+  callsHeaderTwo : any[];
 }
 
 @Injectable({
@@ -40,12 +41,13 @@ export class XmlService {
   public networkInfo: Network_S = {ethernet : [], iPv4: [], iPv6:[] };
   public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: []};
   public capabilitiesInfo: Capabililites_S = {conference:[], conferenceHeader: []};
-  public callsInfo: Calls_S = {calls:[], callsHeader:[]};
+  public callsInfo: Calls_S = {calls:[], callsHeaderOne:[], callsHeaderTwo:[]};
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
   replace$(headerArr){
     headerArr[0] = "Item";
     return headerArr;
   };
+
 //function to get values from each object in array with item value being the first one
   getValuesFromObjArray(ObjArr){
 
@@ -96,8 +98,9 @@ export class XmlService {
     this.capabilitiesInfo.conference = Object.values(response.json().Status.Capabilities[0].Conference[0]);
 
     //Calls item: Details
-    this.callsInfo.callsHeader = Object.keys(response.json().Status.Call[0]);
-    });
+    this.callsInfo.callsHeaderOne = this.replace$(Object.keys(response.json().Status.Call[0])).splice(0,9);
+    this.callsInfo.callsHeaderTwo = this.replace$(Object.keys(response.json().Status.Call[0])).splice(9,16);
+  });
 
     
   }
