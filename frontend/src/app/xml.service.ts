@@ -43,6 +43,12 @@ export interface Time_S{
   time : string;
 }
 
+//Diagnostics Time Binding
+export interface Diagnostics_S{
+  diaTime : string;
+  diagnostics: any[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -56,7 +62,8 @@ export class XmlService {
   public capabilitiesInfo: Capabililites_S = {conference:[], conferenceHeader: []};
   public callsInfo: Calls_S = {callsOne:[], callsTwo:[], callsHeaderOne:[], callsHeaderTwo:[]};
   public contactInfo: Contact_S = {name: [], email: [], number: []};
-  public timeInfo: Time_S = {time: ""}
+  public timeInfo: Time_S = {time: ""};
+  public diagnosticInfo: Diagnostics_S = {diaTime: "", diagnostics: []};
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
   replace$(headerArr){
     headerArr[0] = "Item";
@@ -139,6 +146,12 @@ export class XmlService {
    //Contact item: Details
   let dateFormatted = new Date(response.json().Status.Time[0].SystemTime.toString())
   this.timeInfo.time = dateFormatted.toString();
+
+  //Contact item: Details
+  let diagDateFormatted = new Date(response.json().Status.SystemUnit[0].Diagnostics[0].LastRun[0]._.toString())
+  this.diagnosticInfo.diaTime = diagDateFormatted.toString();
+// this.diagnosticInfo.diagnostics = response.json().Status.SystemUnit[0].Diagnostics[0].LastRun[0]._;
+
   });
 
     

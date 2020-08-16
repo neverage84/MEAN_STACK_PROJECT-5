@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Time_S, XmlService } from './../xml.service';
 
 @Component({
   selector: 'navbar',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  timeInfo : Time_S;
 
+  constructor(service: XmlService) { 
+    this.timeInfo = service.timeInfo;
+   
+  }
   ngOnInit(): void {
   }
 
