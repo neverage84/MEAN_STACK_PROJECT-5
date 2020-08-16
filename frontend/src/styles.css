@@ -2,8 +2,17 @@
 @import "../node_modules/materialize-css/dist/css/materialize.css";
 body {
     background-color: #C4D6ED;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .collapsible-body {
+    background-color: #C4D6ED;
+}
+
+.card-body {
+    border-radius: 50px;
+}
+
+nav {
     background-color: #64BBE3;
 }
