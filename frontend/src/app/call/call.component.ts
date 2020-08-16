@@ -1,3 +1,4 @@
+import { Calls_S, XmlService } from './../xml.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CallComponent implements OnInit {
 
-  constructor() { }
+  callsInfo: Calls_S
+  constructor(service: XmlService) {
+    this.callsInfo = service.callsInfo;
+    console.log(this.callsInfo);
+   }
 
   ngOnInit(): void {
   }

@@ -12,7 +12,7 @@ export class CapabilitiesComponent implements OnInit {
   constructor(service: XmlService) { 
 
     this.capabilitiesInfo = service.capabilitiesInfo;
-    console.log(this.capabilitiesInfo);
+   
   }
 
   ngOnInit(): void {
