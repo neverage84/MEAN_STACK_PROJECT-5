@@ -946,7 +946,7 @@ class XmlService {
         this.networkInfo = { ethernet: [], iPv4: [], iPv6: [] };
         this.peripheralsInfo = { connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: [] };
         this.capabilitiesInfo = { conference: [], conferenceHeader: [] };
-        this.callsInfo = { calls: [], callsHeaderOne: [], callsHeaderTwo: [] };
+        this.callsInfo = { callsOne: [], callsTwo: [], callsHeaderOne: [], callsHeaderTwo: [] };
         // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
         // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         this.getXml();
@@ -969,7 +969,7 @@ class XmlService {
         });
         return formattedArr;
     }
-    //above function custom for Camera obj Arr as it's different
+    //Camera obj Arr as it's different
     getValuesFromObjArrayCamera(ObjArr) {
         let formattedArr = ObjArr.map((v) => {
             let idealArr = Object.values(v);
@@ -982,18 +982,12 @@ class XmlService {
             return arr[2] == "True";
         });
     }
-    //repeat of above function but for Camera obj Arr as it's different
+    //Call obj Arr as it's different
     getValuesFromObjArrayCall(ObjArr) {
-        let formattedArr = ObjArr.map((v) => {
-            let idealArr = Object.values(v);
-            idealArr[0] = Object.values(idealArr[0])[0];
-            idealArr[1] = Object.values((idealArr[1])[0])[0];
-            return idealArr;
-        });
-        //only cameras with value of "True" are returned
-        return formattedArr.filter((arr) => {
-            return arr[2] == "True";
-        });
+        let idealArr = Object.values(ObjArr);
+        idealArr[0] = Object.values(idealArr[0])[0];
+        idealArr[8] = Object.values((idealArr[8])[0])[0];
+        return idealArr[15] == "Connected" ? idealArr : ["NotConnected"];
     }
     //function that runs the http request for xml file
     getXml() {
@@ -1013,7 +1007,9 @@ class XmlService {
             this.capabilitiesInfo.conference = Object.values(response.json().Status.Capabilities[0].Conference[0]);
             //Calls item: Details
             this.callsInfo.callsHeaderOne = this.replace$(Object.keys(response.json().Status.Call[0])).splice(0, 9);
-            this.callsInfo.callsHeaderTwo = this.replace$(Object.keys(response.json().Status.Call[0])).splice(9, 16);
+            this.callsInfo.callsHeaderTwo = this.replace$(Object.keys(response.json().Status.Call[0])).splice(9);
+            this.callsInfo.callsOne = this.getValuesFromObjArrayCall(Object.values(response.json().Status.Call[0])).splice(0, 9);
+            this.callsInfo.callsTwo = this.getValuesFromObjArrayCall(Object.values(response.json().Status.Call[0])).splice(9);
         });
     }
 }
