@@ -25,7 +25,8 @@ export interface Capabililites_S{
 
 //Calls Binding
 export interface Calls_S{
-  calls : any[];
+  callsOne : any[];
+  callsTwo: any[];
   callsHeaderOne : any[];
   callsHeaderTwo : any[];
 }
@@ -41,7 +42,7 @@ export class XmlService {
   public networkInfo: Network_S = {ethernet : [], iPv4: [], iPv6:[] };
   public peripheralsInfo: Peripherals_S = {connectedDevice: [], connectedDeviceHeader: [], connectedCameraHeader: [], connectedCamera: []};
   public capabilitiesInfo: Capabililites_S = {conference:[], conferenceHeader: []};
-  public callsInfo: Calls_S = {calls:[], callsHeaderOne:[], callsHeaderTwo:[]};
+  public callsInfo: Calls_S = {callsOne:[], callsTwo:[], callsHeaderOne:[], callsHeaderTwo:[]};
   //function to take response, replace $ with "Item" as that seems to be the relevant info. (maxOccurance 'n' I'm assuming is not what the user needs?)
   replace$(headerArr){
     headerArr[0] = "Item";
@@ -60,7 +61,7 @@ export class XmlService {
     return formattedArr
    }
 
-   //repeat of above function but for Camera obj Arr as it's different
+   //Camera obj Arr as it's different
    getValuesFromObjArrayCamera(ObjArr){
 
     let formattedArr = ObjArr.map((v) => {
@@ -74,6 +75,19 @@ export class XmlService {
       return arr[2] == "True";
     });
    }
+
+    //Call obj Arr as it's different
+    getValuesFromObjArrayCall(ObjArr){
+
+      
+        let idealArr = Object.values(ObjArr);
+        idealArr[0] = Object.values(idealArr[0])[0];
+        idealArr[8] = Object.values((idealArr[8])[0])[0];
+       
+        return idealArr[15] == "Connected" ? idealArr : ["NotConnected"];
+    
+  
+     }
   
 
   //function that runs the http request for xml file
@@ -99,7 +113,9 @@ export class XmlService {
 
     //Calls item: Details
     this.callsInfo.callsHeaderOne = this.replace$(Object.keys(response.json().Status.Call[0])).splice(0,9);
-    this.callsInfo.callsHeaderTwo = this.replace$(Object.keys(response.json().Status.Call[0])).splice(9,16);
+    this.callsInfo.callsHeaderTwo = this.replace$(Object.keys(response.json().Status.Call[0])).splice(9);
+    this.callsInfo.callsOne = this.getValuesFromObjArrayCall(Object.values(response.json().Status.Call[0])).splice(0,9);
+    this.callsInfo.callsTwo = this.getValuesFromObjArrayCall(Object.values(response.json().Status.Call[0])).splice(9);
   });
 
     
