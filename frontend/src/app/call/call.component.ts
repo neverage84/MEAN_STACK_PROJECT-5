@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-call',
+  selector: 'call',
   templateUrl: './call.component.html',
   styleUrls: ['./call.component.css']
 })
