@@ -1387,6 +1387,8 @@ class XmlService {
             this.systemInfo.temperature = response.json().Status.SystemUnit[0].Hardware[0].Temperature;
             this.systemInfo.fanHeader = this.replace$(Object.keys(response.json().Status.SystemUnit[0].Hardware[0].Monitoring[0].Fan[0]));
             this.systemInfo.fan = this.getValuesFromObjArray(Object.values(response.json().Status.SystemUnit[0].Hardware[0].Monitoring[0].Fan));
+            this.systemInfo.stateHeader = Object.keys(response.json().Status.SystemUnit[0].State[0]);
+            this.systemInfo.state = Object.values(response.json().Status.SystemUnit[0].State[0]);
         });
     }
 }

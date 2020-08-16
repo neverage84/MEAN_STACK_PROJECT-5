@@ -39,19 +39,19 @@
                     </table>
 
 
-<!-- End of Ethernet card divs -->
+<!-- End of Hardware card divs -->
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Card Containing iPv4/iPv6 -->
+      <!-- Card Containing Fan -->
 <div class="row">
         <div class="col s12">
           <div class="card ">
             <div class="card-content ">
               <span class="card-title center">Fan</span>
-<!-- iPv4/iPv6 -->
+<!-- Fan -->
 
                     <table>
                         <thead>
@@ -73,7 +73,41 @@
                     </table>
 
 
-<!-- End of iPv4/iPv6 card divs -->
+<!-- End of Fan card divs -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Card Containing State -->
+<div class="row">
+        <div class="col s12">
+          <div class="card ">
+            <div class="card-content ">
+              <span class="card-title center">State</span>
+<!-- State -->
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th *ngFor="let header of systemInfo.stateHeader"
+                                >{{header}}</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr >
+                            <td *ngFor="let item of systemInfo.state"
+                            >{{item}}</td>
+                                
+                            </tr> 
+                        </tbody>
+                    </table>
+
+
+<!-- End of State card divs -->
             </div>
           </div>
         </div>
