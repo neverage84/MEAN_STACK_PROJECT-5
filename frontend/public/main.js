@@ -1374,8 +1374,6 @@ __webpack_require__.r(__webpack_exports__);
 
 class XmlService {
     constructor(http) {
-        // this.service.getXml()
-        //  .subscribe(response => {
         this.http = http;
         this.url = 'http://localhost:3000/xml';
         this.networkInfo = { ethernet: [], iPv4: [], iPv6: [] };
@@ -1386,8 +1384,6 @@ class XmlService {
         this.timeInfo = { time: "" };
         this.diagnosticInfo = { diaTime: "", diagnostics: [] };
         this.systemInfo = { serialNumber: [], temperature: [], productId: [], productPlatform: [], productType: [], fan: [], fanHeader: [], software: [], softwareHeader: [], state: [], stateHeader: [] };
-        // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
-        // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
         this.getXml();
         Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["interval"])(60000).subscribe(x => {
             this.getXml();

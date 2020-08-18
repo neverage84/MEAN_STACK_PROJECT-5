@@ -233,15 +233,10 @@ export class XmlService {
 
   
   constructor(private http: Http) { 
-// this.service.getXml()
-  //  .subscribe(response => {
-   
-  // console.log(Object.values(response.json().Status.Network[0].Ethernet[0]));
-  // this.network = Object.values(response.json().Status.Network[0].Ethernet[0]);
- 
+
  this.getXml();
 
-  interval(60000).subscribe(x => { // will execute every 30 seconds
+  interval(60000).subscribe(x => { 
     this.getXml();
    
   });
@@ -251,9 +246,7 @@ export class XmlService {
   }
 
   
-    // return this.http.get(this.url);
-    // this.test.ethernet = ["x", "x"];
-
+  
 
   
 
