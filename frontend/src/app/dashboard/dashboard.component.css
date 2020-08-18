@@ -1,4 +1,6 @@
 .card {
     border-radius: 25px;
+    border: solid 2px #C4D6ED;
+    overflow:auto;
 }
 

@@ -1,5 +1,7 @@
 .card {
     border-radius: 25px;
+    border: solid 1px #58585B;
+    overflow:auto;
 }
 .collapsible-header{
     justify-content: center;

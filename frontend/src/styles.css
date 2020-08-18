@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/materialize-css/dist/css/materialize.css";
 body {
-    background-color: #C4D6ED;
+   
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -13,6 +13,4 @@ body {
     border-radius: 50px;
 }
 
-nav {
-    background-color: #64BBE3;
-}
+
